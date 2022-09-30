@@ -1,0 +1,410 @@
+$transparent: #00000000;
+$pastel_purple: #6000d3;
+$pastel_purple_faded: #6000d3e0;
+$pastel_purple2: #5518d7;
+$dark_violet: #460b93;
+$dark_violet2: #400999;
+$lavender: #3e00d3;
+$deeps: #1e0066;
+$lavender_bright: #5e40f3;
+$lavender_dark: #4e00b3;
+$black: #000000;
+$pastel_green_glow: hsla(170, 64%, 40%, 0.498);
+// $pastel_green_glow: #07a187;
+$pastiel: #29c8cb;
+$pastiel_faded: #29c8cb99;
+
+@mixin _hide {
+	height: 0; width: 0; overflow: hidden;
+}
+@mixin _hide_collapse_ { 
+	@include _hide();
+	margin-top: 0; 
+	margin-bottom: 0;
+}
+
+/**
+* Sections are declared top to bottom in order they exist in HTML 
+* not the same as position at end, i.e. tabs at bottom...
+*/
+// outer_and_header
+// nav_bar : header.desktop-navbar
+// main : .editor.moonlander .fluid-container
+// frame : .editor.moonlander .fluid-container .frame
+// moon : .editor.moonlander .fluid-container .frame .moonlander`;
+// keys = $moon .key
+/** ~~~ * <outer_and_header> * ~~~ **/
+#app {
+	background-color: #000000;
+    position: fixed;
+	min-height: 100vh;
+    min-width: 100vw;
+
+	.app-frame {
+		background-color: $black;
+	}
+}
+.desktop-navbar {
+	background-color: #00000000; 
+	overflow: visible; 
+	z-index: 100; 
+	padding-top: 0;
+
+	// nav_bar = .desktop-navbar {background-color: #00000000; padding-top: 0;};?
+	// header
+	.fluid-container {
+		.logo {
+			@include _hide();
+		}
+
+		ul.menu-container {
+			position: absolute; 
+			top: 666px; 
+			left: 270px;
+			.menu-entry {
+				margin-left: 4px;
+			}
+			#rainbow {
+				position: absolute; 
+				width: 80px; 
+				height: 80px; 
+				top: 30px; 
+				right: 0px; 
+				font-size: 36px;
+			}
+			li:nth-of-type(4n) {
+				position: absolute; 
+				width: 90px; 
+				height: 80px; 
+				left: -55px;
+				transform: scale(.5);
+				img {
+					position: absolute; 
+					width: 100px; 
+					height: 80px; 
+					top: 0; 
+					right: 10px; 
+					opacity: .001; 
+					z-index: 100;
+				}
+			}
+		}
+	}
+}
+/** ~~~ * </outer_and_header> * ~~~ **/
+/** ~~~ * <main>/<tabs> * ~~~ **/
+.editor.moonlander .fluid-container {
+	>.align-center, >.m-t {
+		@include _hide();
+	}
+    
+    .tabs {
+        overflow: visible; 
+		z-index: 20; 
+		background-color: #00000000;
+		position: absolute; 
+		width: 210px; 
+		// top: 665px; 
+		bottom: -82px;
+		left: 10px;// width: 535px
+		.scrollbar-container {
+			width: 210px; 
+			overflow: hidden;
+			.ps__rail-x {
+				display: none
+			}
+		}
+		.tabs-container {
+			width: 210px; 
+			overflow: hidden;
+		}
+		.tab {
+			height: 37px; 
+			display: flex; 
+			justify-content: center; 
+			align-items: center;
+			width: 37px; 
+			min-width: auto; 
+			border: 3px solid $lavender_dark;
+			border-radius: 5px; 
+			background-color: $lavender_dark;
+			&.active {
+				background-color: $lavender!important;
+			}
+			&:hover {
+				cursor: pointer;
+				background-color: $lavender_bright;
+				border: 3px solid $lavender_bright;
+			}
+			button {
+				cursor: pointer;
+				width: 42px; 
+				height: 49px; 
+				margin-right: 5px;
+			}
+			// Invis tab labels and icons
+			* {
+				opacity: 0; 
+				min-width: 42px;
+			}
+			a, .small a {
+				opacity: 0; 
+				width: 37px; 
+				height: 37px; 
+				margin-right: 8px;
+			}
+			// TODO label?
+			span {
+				display: none;
+			}
+		}
+		// This is the config gear icon moved to lower right
+		>.tab.small {
+			position: absolute; 
+			bottom: 0;
+			left: 173px;
+			width: 37px; 
+			height: 37px; 
+			.bubble, .icon-settings {
+				display: none;
+			}
+		}
+		#cog-tooltip {
+			display: none
+		}
+	} 
+}
+/** ~~~ </tabs> ~~~ **/
+/** ~~~ * <.frame>/<.key> * ~~~ **/
+.editor.moonlander .fluid-container {
+	padding: 0 8px;
+	.frame {
+		padding-top: 16px;
+		.moonlander {
+			grid-template-columns: repeat(7,1fr) .1fr repeat(7,1fr);
+			column-gap: 3px; 
+			row-gap: 3px;
+			.key {
+				background-color: $dark_violet!important; 
+				border-color: $pastel_green_glow!important;
+				&:hover { 
+					box-shadow: $pastel_green_glow 0 0 0 2px inset!important;
+				}
+				&.custom.rocket, &.rocket  { 
+					background-color: transparent!important; 
+				}
+				&.rocket:hover { //&.custom
+					box-shadow: transparent 0 0 0 2px inset!important;
+					border-color: $pastel_green_glow!important;
+					// --border-color: hsla(170, 64%, 40%, 0.498);
+				}
+				&.rocket:hover * { //&.custom
+					box-shadow: none!important;
+					border-color: none!important;
+					// --border-color: hsla(170, 64%, 40%, 0.498);
+				}
+				&.rocket:hover svg path.rocket-outline {
+					box-shadow: transparent 0 0 0 2px inset!important; // stroke-width: 1.5;?
+				}
+				.content {
+					justify-content: center; 
+					margin: auto; 
+					font-weight: 500; 
+					color: $black!important;
+					&.transparent {
+						background-color: transparent;
+					}
+					.labels {
+						// Allkeys
+						.label, .label.small, .mod.small, .label.big {
+							font-size: 23px; 
+							font-weight: bold;
+						}
+						.glyph { 
+							font-size: 21px 
+						}
+						.iconKey img { 
+							width: 33px; 
+						}
+						.plus {
+							@include _hide();
+						}
+						.glyph span {
+							font-weight: bold;
+						}
+						.emojiKey {
+							margin: auto; 
+							height: auto; 
+							padding-top: 0; 
+							opacity: .8;
+						}
+					}
+				} 
+				// .key&...
+				&.custom {
+					background-color: $pastel_purple;
+				}
+				&.magic {
+					background-color: $dark_violet2;
+				}
+				&.modifier {
+					background-color: $pastel_purple_faded
+				}
+				&.shine {
+					background-color: $lavender
+				}
+				&.rocket svg :nth-child(1) { //&.custom 
+					stroke: $pastel_green_glow;
+				}
+				&.rocket:hover svg :nth-child(1), &.rocket:hover svg .rocket-outline { //&.custom 
+					stroke: $pastel_green_glow!important;;
+					box-shadow: none!important;
+					border-color: none!important;
+				}
+			} 
+			// since that frame grid held space for the clusters 
+			// lets lift them & manually place w/absolute
+			.clusters {
+				position: relative; 
+				width: 100px; 
+				height: 100px; 
+				top: 40px; 
+				right: -4px;
+				.left-cluster {
+					position: absolute; 
+					width: 200px; 
+					height: 180px; 
+					top: -45px; 
+					right: 1px;
+					transform: scale(.9)rotate(28deg);
+				}
+				.right-cluster {
+					position: absolute; 
+					width: 200px; 
+					height: 180px; 
+					top: -47px; 
+					left: 91px;
+					transform: scale(.9)rotate(-28deg);
+				}
+				.key.custom.rocket {
+					background-color: transparent;
+				}
+				.key.custom svg {
+					fill: $dark_violet2!important;
+				}
+				.key.rocket svg {
+					fill: $dark_violet2!important;
+				}
+			} // ~~~ </.key theme>
+		} // </.moonlander>
+		.logo {
+			@include _hide();
+		}
+	}
+} 
+/** ~~~ * </.frame> * ~~~ **/
+
+/** ~~~ * <.bottom-nav> * ~~~ **/
+.editor.moonlander .fluid-container .bottom-nav {
+	position: relative; 
+	top: 0; 
+	margin-top: -100px;
+	// random links/legend
+	.left {
+		@include _hide_collapse_();
+	}// ~ </left>
+	// ~ center (save/compile)
+	.center {
+		position: absolute;
+		top: -76px;
+		right: 148px;
+		overflow: visible;
+		width: 210px;
+		height: 60px;
+		.download-section {
+			padding: 3px 3px 0!important;
+		}
+		// border: 1px solid #f9e7ef88;
+		button.button {
+			width: 271px;
+			border: none;
+			background-color: $lavender;
+			font-size: 17px;
+			padding: 10px 12px!important;
+		}
+		.download-section {
+			padding: 15px!important;
+
+			.button {
+				width: 188px; 
+				padding: 10px 12px!important; 
+				border-radius: 5px;
+				&:hover {
+					color: white;
+				}
+			}
+			img {
+				position: absolute!important;
+			}
+			.m-t {
+				@include _hide_collapse_();
+			}
+			.flash-popover {
+				@include _hide_collapse_();
+			}
+			button img {
+				@include _hide_collapse_();
+			}
+		}
+
+	}// ~ </center> (save/compile)
+	// ~ right (modify/nash)
+	.right .modify-container {
+		position: absolute; 
+		top: -75px; 
+		right: 2px;
+		overflow: visible; 
+		width: 200px; 
+		height: 77px; 
+		padding: 15px!important;
+		// The modify button...
+		.button, .button.hollow {// border: 1px solid #f9e7ef88
+			padding: 10px 12px; 
+			background-color: $lavender;
+			border-radius: 5px;
+			border: none;
+			color: #f9e7ef;
+			font-size: 16px;
+		}
+	}
+
+} 
+/** ~~~ * </bottom nav> * ~~~ **/
+/** ~~~ * <etc_global_ui_theme> * ~~~ **/
+.button {
+	background-color: $lavender; 
+	font-size: 17px; 
+}
+// ~~~ <etc_global_ui_theme> maybe integrate some?
+a {
+	color: $lavender_bright
+}
+a:hover {
+	color: #ffffff;
+}
+#layers .user-dropdown { 
+	background-color: $black;
+}
+#cog-tooltip { 
+	font-size: 10px; 
+	min-width: 180px; 
+}
+footer {
+	@include _hide_collapse_();
+}
+// ~~~ </etc_ui_theme>
+
+	
+
+
+

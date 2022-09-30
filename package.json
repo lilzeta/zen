@@ -1,0 +1,27 @@
+{
+	"name": "zen",
+	"version": "0.0.1",
+	"description": "minimalist stylesheets for the sensitive among us",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"clean": "rimraf ./src",
+		"start": "node ./start_zen.js ",
+		"reref": "npm i --save-dev \"../../o/raw/dist/rawx-0.2.1.tgz\""
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/lilzeta/zen.git"
+	},
+	"keywords": [],
+	"author": "https://github.com/lilzeta",
+	"license": "kind",
+	"bugs": {
+		"url": "https://github.com/lilzeta/zen/issues"
+	},
+	"homepage": "https://github.com/lilzeta/zen#readme",
+	"devDependencies": {
+		"rawx": "file:../../o/raw/dist/rawx-0.2.1.tgz",
+		"rimraf": "^3.0.2"
+	}
+}
