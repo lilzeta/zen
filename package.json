@@ -21,7 +21,7 @@
 	},
 	"homepage": "https://github.com/lilzeta/zen#readme",
 	"devDependencies": {
-		"rawx": "file:../../o/raw/dist/rawx-0.2.1.tgz",
+		"rawx": "0.3.3",
 		"rimraf": "^3.0.2"
 	}
 }
