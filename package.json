@@ -6,7 +6,7 @@
 	"type": "module",
 	"scripts": {
 		"clean": "rimraf ./src",
-		"start": "node ./start_zen.js ",
+		"start": "node ./src/start_zen.js ",
 		"reref": "npm i --save-dev \"../../o/raw/dist/rawx-0.2.1.tgz\""
 	},
 	"repository": {
@@ -22,6 +22,7 @@
 	"homepage": "https://github.com/lilzeta/zen#readme",
 	"devDependencies": {
 		"rawx": "0.3.3",
-		"rimraf": "^3.0.2"
+		"rimraf": "^3.0.2",
+		"sass": "^1.76.0"
 	}
 }

@@ -58,9 +58,10 @@ $pastiel_faded: #29c8cb99;
 		}
 
 		ul.menu-container {
-			position: absolute; 
-			top: 666px; 
-			left: 270px;
+			// position: absolute; 
+			// top: 666px; 
+			// left: 270px;
+			display: none;
 			.menu-entry {
 				margin-left: 4px;
 			}
@@ -179,7 +180,9 @@ $pastiel_faded: #29c8cb99;
 .editor.moonlander .fluid-container {
 	padding: 0 8px;
 	.keyboard {
+		position: static;
 		padding-top: 16px;
+		height: 100%;
 		.moonlander {
 			grid-template-columns: repeat(7,1fr) .1fr repeat(7,1fr);
 			column-gap: 3px; 
@@ -306,18 +309,18 @@ $pastiel_faded: #29c8cb99;
 
 /** ~~~ * <.bottom-nav> * ~~~ **/
 .editor.moonlander .fluid-container .bottom-nav {
-	position: relative; 
-	top: 0; 
-	margin-top: -100px;
+	position: absolute;
+	bottom: 36px; 
+	right: 10px;
 	// random links/legend
 	.left {
 		@include _hide_collapse_();
 	}// ~ </left>
 	// ~ center (save/compile)
 	.center {
-		position: absolute;
-		top: -76px;
-		right: 148px;
+		// position: absolute;
+		// bottom: 64px;
+		// right: 10px;
 		overflow: visible;
 		width: 210px;
 		height: 60px;
@@ -359,22 +362,28 @@ $pastiel_faded: #29c8cb99;
 
 	}// ~ </center> (save/compile)
 	// ~ right (modify/nash)
-	.right .modify-container {
-		position: absolute; 
-		top: -75px; 
-		right: 2px;
-		overflow: visible; 
-		width: 200px; 
-		height: 77px; 
-		padding: 15px!important;
-		// The modify button...
-		.button, .button.hollow {// border: 1px solid #f9e7ef88
-			padding: 10px 12px; 
-			background-color: $lavender;
-			border-radius: 5px;
-			border: none;
-			color: #f9e7ef;
-			font-size: 16px;
+	.right {
+		width: 150px;
+		.modify-container {
+			p {
+				display: none;
+			}
+			// position: absolute; 
+			// bottom: 64px; 
+			// right: 10px;
+			// overflow: visible; 
+			// width: 400px; 
+			// height: 77px; 
+			padding: 15px!important;
+			// The modify button...
+			.button, .button.hollow {// border: 1px solid #f9e7ef88
+				padding: 10px 12px; 
+				background-color: $lavender;
+				border-radius: 5px;
+				border: none;
+				color: #f9e7ef;
+				font-size: 16px;
+			}
 		}
 	}
 

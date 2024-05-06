@@ -3,29 +3,8 @@ logs
 *.log
 npm-debug.log*
 
-# Runtime data
-pids
-*.pid
-*.seed
-*.pid.lock
-
-# Compiled binary addons (https://nodejs.org/api/addons.html)
-build/Release
-
-# Dependency directories
-node_modules/
-
-# TypeScript v1 declaration files
-typings/
-
-# TypeScript cache
-*.tsbuildinfo
-
 # Optional npm cache directory
 .npm
-
-# Optional eslint cache
-.eslintcache
 
 # Output of 'npm pack'
 *.tgz
@@ -34,7 +13,8 @@ typings/
 .env
 .env.test
 
-package-lock.json
+# Dependency directories
+node_modules/
 
-dist
-u/
+# compiled stylesheets and script
+dist/
