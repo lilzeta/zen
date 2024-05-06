@@ -1,15 +1,20 @@
-/**
-* Sections are declared top to bottom in order they exist in HTML 
-* not the same as position at end, i.e. tabs at bottom...
-*/
-/** ~~~ * <outer_and_header> * ~~~ **/
+// ==UserScript==
+// @name        New script
+// @namespace   Violentmonkey Scripts
+// @match       *://configure.zsa.io/moonlander/layouts/*
+// @grant       GM_addStyle
+// @version     1.0
+// @author      -
+// @description 5/6/2024, 12:11:31 AM
+// ==/UserScript==
+
+GM_addStyle(`
 #app {
   background-color: #000000;
 }
 #app .app-frame {
   background-color: #000000;
 }
-
 .desktop-navbar {
   background-color: rgba(0, 0, 0, 0);
   overflow: visible;
@@ -17,6 +22,9 @@
   padding-top: 0;
 }
 .desktop-navbar .fluid-container ul.menu-container {
+    display: none;
+}
+/* .desktop-navbar .fluid-container ul.menu-container {
   position: absolute;
   top: 666px;
   left: 270px;
@@ -47,10 +55,7 @@
   right: 10px;
   opacity: 0.001;
   z-index: 100;
-}
-
-/** ~~~ * </outer_and_header> * ~~~ **/
-/** ~~~ * <main>/<tabs> * ~~~ **/
+} */
 .editor.moonlander .fluid-container > .align-center, .editor.moonlander .fluid-container > .m-t {
   height: 0;
   width: 0;
@@ -127,9 +132,6 @@
 .editor.moonlander .fluid-container .tabs #cog-tooltip {
   display: none;
 }
-
-/** ~~~ </tabs> ~~~ **/
-/** ~~~ * <.keyboard>/<.key> * ~~~ **/
 .editor.moonlander .fluid-container {
   padding: 0 8px;
 }
@@ -337,9 +339,6 @@
   color: #f9e7ef;
   font-size: 16px;
 }
-
-/** ~~~ * </bottom nav> * ~~~ **/
-/** ~~~ * <etc_global_ui_theme> * ~~~ **/
 .button {
   background-color: #3e00d3;
   font-size: 17px;
@@ -369,5 +368,4 @@ footer {
   margin-top: 0;
   margin-bottom: 0;
 }
-
-/*# sourceMappingURL=zsa.css.map */
+`)

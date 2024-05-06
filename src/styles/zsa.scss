@@ -30,8 +30,8 @@ $pastiel_faded: #29c8cb99;
 // outer_and_header
 // nav_bar : header.desktop-navbar
 // main : .editor.moonlander .fluid-container
-// frame : .editor.moonlander .fluid-container .frame
-// moon : .editor.moonlander .fluid-container .frame .moonlander`;
+// keyboard : .editor.moonlander .fluid-container .keyboard
+// moon : .editor.moonlander .fluid-container .keyboard .moonlander`;
 // keys = $moon .key
 /** ~~~ * <outer_and_header> * ~~~ **/
 #app {
@@ -105,7 +105,7 @@ $pastiel_faded: #29c8cb99;
 		position: absolute; 
 		width: 210px; 
 		// top: 665px; 
-		bottom: -82px;
+		bottom: 64px;
 		left: 10px;// width: 535px
 		.scrollbar-container {
 			width: 210px; 
@@ -175,10 +175,10 @@ $pastiel_faded: #29c8cb99;
 	} 
 }
 /** ~~~ </tabs> ~~~ **/
-/** ~~~ * <.frame>/<.key> * ~~~ **/
+/** ~~~ * <.keyboard>/<.key> * ~~~ **/
 .editor.moonlander .fluid-container {
 	padding: 0 8px;
-	.frame {
+	.keyboard {
 		padding-top: 16px;
 		.moonlander {
 			grid-template-columns: repeat(7,1fr) .1fr repeat(7,1fr);
@@ -262,7 +262,7 @@ $pastiel_faded: #29c8cb99;
 					border-color: none!important;
 				}
 			} 
-			// since that frame grid held space for the clusters 
+			// since that keyboard grid held space for the clusters 
 			// lets lift them & manually place w/absolute
 			.clusters {
 				position: relative; 
@@ -302,7 +302,7 @@ $pastiel_faded: #29c8cb99;
 		}
 	}
 } 
-/** ~~~ * </.frame> * ~~~ **/
+/** ~~~ * </.keyboard> * ~~~ **/
 
 /** ~~~ * <.bottom-nav> * ~~~ **/
 .editor.moonlander .fluid-container .bottom-nav {
