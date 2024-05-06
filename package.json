@@ -2,18 +2,15 @@
 	"name": "zen",
 	"version": "0.0.1",
 	"description": "minimalist stylesheets for the sensitive among us",
-	"main": "index.js",
 	"type": "module",
 	"scripts": {
-		"clean": "rimraf ./src",
-		"start": "node ./src/start_zen.js ",
-		"reref": "npm i --save-dev \"../../o/raw/dist/rawx-0.2.1.tgz\""
+		"start": "node ./src/start_zen.js "
 	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/lilzeta/zen.git"
 	},
-	"keywords": [],
+	"keywords": ["sass scripts", "tampermonkey", "violentmonkey"],
 	"author": "https://github.com/lilzeta",
 	"license": "kind",
 	"bugs": {
@@ -22,7 +19,6 @@
 	"homepage": "https://github.com/lilzeta/zen#readme",
 	"devDependencies": {
 		"rawx": "0.3.3",
-		"rimraf": "^3.0.2",
 		"sass": "^1.76.0"
 	}
 }
